@@ -18,7 +18,7 @@
         border-collapse: collapse;
     }
 
-    /* ── Header info table (bordered cells, target style) ── */
+    /* Header info table (bordered cells, target style) */
     .header-info {
         border-collapse: collapse;
     }
@@ -42,7 +42,7 @@
         font-weight: 600;
     }
 
-    /* ── Items table ── */
+    /* Items table */
     .items td.blanktotal {
         background-color: #ffffff;
         border: 0mm none #000000;
@@ -87,16 +87,7 @@
         padding-right: 0px;
     }
 
-    /* {prop:prop-th-name-align:left} */
-    /* {prop:prop-td-name-align:left} */
-    /* {prop:prop-th-price-align:left} */
-    /* {prop:prop-td-price-align:left} */
-    /* {prop:prop-th-units-align:left} */
-    /* {prop:prop-td-units-align:left} */
-    /* {prop:prop-th-total-align:right} */
-    /* {prop:prop-td-total-align:right} */
-
-    /* ── Item group / title rows ── */
+    /* Item group / title rows */
     tr.tritemtitle td {
         font-size: 9pt;
         font-style: normal;
@@ -117,12 +108,12 @@
         border: none;
     }
 
-    /* ── Bullet points for sub-items ── */
+    /* Bullet points for sub-items */
     .items tbody tr:not(.tritemtitle) td:first-child:before {
         content: "\2022  ";
     }
 
-    /* ── Totals ── */
+    /* Totals */
     .tabletotals {
         font-size: 9pt;
         font-style: normal;
@@ -159,7 +150,6 @@
         padding-top: 5px;
     }
 
-    /* ── Extras (notes, custom fields, etc.) ── */
     .extras {
         font-size: 9pt;
         font-style: normal;
@@ -171,7 +161,6 @@
         margin-bottom: 12px;
     }
 
-    /* ── Multi due date ── */
     .multiduedate {
         width: 28%;
         margin-top: 10px;
@@ -210,7 +199,7 @@
         padding-bottom: 10px;
     }
 
-    /* ── Footer ── */
+    /* Footer */
     .footertable {
         font-size: 7pt;
         font-style: normal;
@@ -229,7 +218,7 @@
         padding-left: 0;
     }
 
-    /* ── Payment & signature ── */
+    /* Payment & signature */
     .payment-section {
         font-size: 9pt;
         font-style: normal;
@@ -252,12 +241,10 @@
     }
 </style>
 
-<!-- ═══ PAGE HEADER (clean, no color bar) ═══ -->
 <htmlpageheader name="myheader">
     <div style="height: 0px;"></div>
 </htmlpageheader>
 
-<!-- ═══ PAGE FOOTER (multi-column company info) ═══ -->
 <htmlpagefooter name="myfooter">
     <div style="
       border-top: 1pt solid #333333;
@@ -293,7 +280,6 @@
     </tr>
 </tbody></table>
 
-<!-- ═══ HEADER: Logo LEFT — Invoice info RIGHT (bordered table) ═══ -->
 <table width="100%" style="margin-left: 42px; margin-right: 42px; margin-bottom: 30px;">
     <tbody><tr>
         <td width="40%" style="vertical-align: top;">
@@ -319,7 +305,7 @@
     </tr>
 </tbody></table>
 
-<!-- ═══ CLIENT INFO ═══ -->
+<!-- CLIENT INFO -->
 <div style="margin-left: 42px; margin-right: 42px; margin-bottom: 24px; font-size: 9pt; line-height: 14pt; letter-spacing: -0.05px;">
     <span style="font-weight: bold;">%C_NAME%</span><br>
     %CLIENTADDRESS%<br>
@@ -332,7 +318,7 @@
     ]]
 </div>
 
-<!-- ═══ BODY / DESCRIPTION ═══ -->
+<!-- BODY -->
 <div style="
     margin-left: 42px;
     margin-right: 42px;
@@ -346,15 +332,13 @@
     %BODY%
 </div>
 
-<!-- ═══ SERVICES HEADING ═══ -->
 <div style="margin-left: 42px; margin-right: 42px; font-size: 9pt; font-weight: bold; line-height: 13pt; letter-spacing: -0.05px; margin-bottom: 10px;">
     Services performed to date
 </div>
 
-<!-- ═══ ITEMS TABLE ═══ -->
 <div style="margin-left: 42px; margin-right: 42px;">%ITEMS%</div>
 
-<!-- ═══ TOTALS ═══ -->
+<!-- TOTALS -->
 <div style="margin-left: 42px; margin-right: 42px; margin-bottom: 20px;">
     <table width="100%">
         <tbody><tr>
@@ -364,45 +348,33 @@
     </tbody></table>
 </div>
 
-<!--
-    [[SIMPLE|<br>
-    <div style="text-align:right">
-    %SIMPLETOTAL%<br>%TAXINC%
-    </div>]]-->
-
-<!-- ═══ PAYMENT / IBAN ═══ -->
 <div class="payment-section">
     Please make the payment within 30 days on our account<br>
     IBAN 123456789
 </div>
 
-<!-- ═══ SIGNATURE ═══ -->
 <div class="signature-line">
     Idea Sonora
 </div>
 
-<!-- ═══ NOTES ═══ -->
 [[NOTES|
 <div class="extras">
     <span style="font-weight: bold">{LANG_observations}</span><br>%NOTES%
 </div>
 ]]
 
-<!-- ═══ CUSTOM FIELDS ═══ -->
 [[CUSTOMFIELDS|
 <div class="extras">
     <span style="font-weight: bold">%CFK%</span><br>%CFV%
 </div>
 ]]
 
-<!-- ═══ PAYMENT METHOD ═══ -->
 [[PM|
 <div class="extras">
     <span style="font-weight: bold">{LANG_paymentterms}</span><br>%PM%
 </div>
 ]]
 
-<!-- ═══ TERMS & CONDITIONS ═══ -->
 [[TAC|
 <pagebreak>
     <div class="extras">
