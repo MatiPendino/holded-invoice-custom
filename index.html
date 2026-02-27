@@ -1,0 +1,412 @@
+<script type="text/javascript" src="https://app.holded.com/pNi8h_1pyTEn97AkUglxf-dN6diBcXgEYuRxsXhzqNE0iLDT7Tjiq50i_p2hoMmQ0BYPw7_GtogKbC2aton2wlDz6k8r1Dq7DKjWdjfPeyFqUWRq1Yg5QSxJFDzM5JV5qYLMaytTPG4q9ihTWiEEIcR_rmB_UelQ6ViShIdHZyflG4X_G_Td9ExwMH-c3mbn_OcxVnaxPyqQdPyBuP4jC1v3QRiiGIzutYCsHIDsIKnexoz2O2-cEu25XBzW8uyl7XByAYvRHYK38JosLEbjALDE47OR7LGLoOzkFvbq4iSSvIAGzaC2ii7mhbexCpRyaMYELlb0uP1EO1ay8SJSoqcsxNTEvBNE_MpOdnYEdQ6RF0yWaSdtbosHXzyTx2ZtIe-oNkKOqm-ebQJdNEWas-jv1spP91xNM1Qz9lMVrsQEqLSkY5hu8RFPWlyv5p4iF_8Mog7_id9yl_URBPL_HqzoRRU35SF7lOO1zzOJy7lktzktLbWvUjCxGCxTBMS3"></script><style>
+    .logo {
+        height: %LOGOSIZE%;
+        max-height: 71px;
+    }
+
+    body,
+    table,
+    p,
+    div {
+        font-family: %FONT%;
+        color: #222222;
+    }
+
+    table {
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+    }
+
+    /* ── Header info table (bordered cells, target style) ── */
+    .header-info {
+        border-collapse: collapse;
+    }
+
+    .header-info td {
+        border: none;
+        border-bottom: 0.5pt solid #333333;
+        padding: 7px 14px;
+        font-size: 9pt;
+        line-height: 14pt;
+        letter-spacing: -0.05px;
+    }
+
+    .header-info .label-cell {
+        text-align: left;
+        font-weight: 400;
+    }
+
+    .header-info .value-cell {
+        text-align: right;
+        font-weight: 600;
+    }
+
+    /* ── Items table ── */
+    .items td.blanktotal {
+        background-color: #ffffff;
+        border: 0mm none #000000;
+        border-top: 0mm solid #000000;
+        border-right: 0mm solid #000000;
+    }
+
+    .items td.totals {
+        text-align: right;
+        border: 0mm solid #000000;
+        font-weight: bold;
+    }
+
+    .items thead td {
+        padding: 8px 10px;
+        border-bottom: 1pt solid #333333;
+        opacity: 0.8;
+        font-size: 7pt;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 11pt;
+        letter-spacing: -0.05px;
+    }
+
+    .items tbody tr td {
+        padding: 6px 10px;
+        font-size: 8.5pt;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 13pt;
+        letter-spacing: -0.05px;
+        vertical-align: top;
+    }
+
+    .item-td-name {
+        font-weight: bold;
+    }
+
+    .items tr td:nth-child(1) {
+        width: 45%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    /* {prop:prop-th-name-align:left} */
+    /* {prop:prop-td-name-align:left} */
+    /* {prop:prop-th-price-align:left} */
+    /* {prop:prop-td-price-align:left} */
+    /* {prop:prop-th-units-align:left} */
+    /* {prop:prop-td-units-align:left} */
+    /* {prop:prop-th-total-align:right} */
+    /* {prop:prop-td-total-align:right} */
+
+    /* ── Item group / title rows ── */
+    tr.tritemtitle td {
+        font-size: 9pt;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 13pt;
+        letter-spacing: -0.05px;
+        padding: 8px 0px;
+        border: none;
+    }
+
+    .tditemtitlevalue {
+        font-size: 9pt;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 13pt;
+        letter-spacing: -0.05px;
+        padding: 8px 0px;
+        border: none;
+    }
+
+    /* ── Bullet points for sub-items ── */
+    .items tbody tr:not(.tritemtitle) td:first-child:before {
+        content: "\2022  ";
+    }
+
+    /* ── Totals ── */
+    .tabletotals {
+        font-size: 9pt;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 13pt;
+        letter-spacing: -0.05px;
+    }
+
+    .tabletotals tr td {
+        padding: 3px 0;
+    }
+
+    .tabletotals td:nth-child(1) {
+        text-align: left;
+    }
+
+    .thetotaltext {
+        border-top: 1.5pt solid #333333;
+        font-weight: bold;
+        font-size: 10pt;
+        font-style: normal;
+        line-height: 14pt;
+        letter-spacing: -0.05px;
+        padding-top: 5px;
+    }
+
+    .thetotalvalue {
+        border-top: 1.5pt solid #333333;
+        font-weight: bold;
+        font-size: 10pt;
+        font-style: normal;
+        line-height: 14pt;
+        letter-spacing: -0.05px;
+        padding-top: 5px;
+    }
+
+    /* ── Extras (notes, custom fields, etc.) ── */
+    .extras {
+        font-size: 9pt;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 13pt;
+        letter-spacing: -0.05px;
+        margin-left: 42px;
+        margin-right: 42px;
+        margin-bottom: 12px;
+    }
+
+    /* ── Multi due date ── */
+    .multiduedate {
+        width: 28%;
+        margin-top: 10px;
+        margin-left: 0;
+        font-size: 10pt;
+    }
+
+    .multiduedate td {
+        border-left: 0.1mm solid #000000;
+        border-right: 0.1mm solid #000000;
+        border-bottom: 1px solid #000;
+        text-align: center;
+        color: #000;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 10pt;
+    }
+
+    .multiduedate thead tr td:nth-child(1) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .multiduedate thead tr td:nth-child(2) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .multiduedate thead tr td {
+        background-color: #eeeeee;
+        border: 0.1mm solid #000000;
+        color: #000;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* ── Footer ── */
+    .footertable {
+        font-size: 7pt;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 10pt;
+        letter-spacing: -0.05px;
+    }
+
+    .footertable td {
+        vertical-align: top;
+        padding: 2px 8px;
+        border: none;
+    }
+
+    .footertable td:first-child {
+        padding-left: 0;
+    }
+
+    /* ── Payment & signature ── */
+    .payment-section {
+        font-size: 9pt;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14pt;
+        letter-spacing: -0.05px;
+        margin-left: 42px;
+        margin-right: 42px;
+        margin-top: 16px;
+    }
+
+    .signature-line {
+        font-size: 9pt;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 14pt;
+        margin-top: 20px;
+        margin-left: 42px;
+        margin-bottom: 16px;
+    }
+</style>
+
+<!-- ═══ PAGE HEADER (clean, no color bar) ═══ -->
+<htmlpageheader name="myheader">
+    <div style="height: 0px;"></div>
+</htmlpageheader>
+
+<!-- ═══ PAGE FOOTER (multi-column company info) ═══ -->
+<htmlpagefooter name="myfooter">
+    <div style="
+      border-top: 1pt solid #333333;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      margin-left: 42px;
+      margin-right: 42px;
+    ">
+        <table width="100%" class="footertable">
+            <tbody><tr>
+                <td width="16%"><b>%NAME%</b></td>
+                <td width="18%">%ADDRESS%</td>
+                <td width="18%">T +41 22 300 54 07<br>F +41 22 300 54 08</td>
+                <td width="20%">info@lacroixchessex.ch<br>www.lacroixchessex.ch</td>
+                <td width="14%">%IDNUM%</td>
+                <td width="14%" style="text-align: right;">
+                    {LANG_page}<br>{PAGENO}/{nb}
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+</htmlpagefooter>
+
+<sethtmlpageheader name="myheader" value="on" show-this-page="1"></sethtmlpageheader>
+<sethtmlpagefooter name="myfooter" value="on"></sethtmlpagefooter>
+
+<!-- Verifactu QR (conditional) -->
+<table style="width: 100%">
+    <tbody><tr>
+        <td style="text-align: center;">
+            [[VERIFACTU|<div class="verifactu-qr" data-locked="true" contenteditable="false" style="text-align: center; vertical-align: top;">%VERIFACTU%</div><br><br><br>]]
+        </td>
+    </tr>
+</tbody></table>
+
+<!-- ═══ HEADER: Logo LEFT — Invoice info RIGHT (bordered table) ═══ -->
+<table width="100%" style="margin-left: 42px; margin-right: 42px; margin-bottom: 30px;">
+    <tbody><tr>
+        <td width="40%" style="vertical-align: top;">
+            %LOGO%
+        </td>
+        <td width="20%"></td>
+        <td width="40%" style="vertical-align: top;">
+            <table class="header-info" width="100%">
+                <tbody><tr>
+                    <td class="label-cell">{LANG_number}</td>
+                    <td class="value-cell">%DOCNUM%</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">[[DUEDATE|{LANG_duedate}]]</td>
+                    <td class="value-cell">[[DUEDATE|%DUEDATE%]]</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">{LANG_date}</td>
+                    <td class="value-cell">%DATE%</td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+<!-- ═══ CLIENT INFO ═══ -->
+<div style="margin-left: 42px; margin-right: 42px; margin-bottom: 24px; font-size: 9pt; line-height: 14pt; letter-spacing: -0.05px;">
+    <span style="font-weight: bold;">%C_NAME%</span><br>
+    %CLIENTADDRESS%<br>
+    %C_IDNUM%<br>
+    %C_PHONE%
+    [[SHIPPING|
+    <br><br>
+    <span style="font-weight: bold;">{LANG_shippingaddress}</span><br>
+    %SHIPPINGADDRESS%
+    ]]
+</div>
+
+<!-- ═══ BODY / DESCRIPTION ═══ -->
+<div style="
+    margin-left: 42px;
+    margin-right: 42px;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13pt;
+    letter-spacing: -0.05px;
+    margin-top: 2px;
+  ">
+    %BODY%
+</div>
+
+<!-- ═══ SERVICES HEADING ═══ -->
+<div style="margin-left: 42px; margin-right: 42px; font-size: 9pt; font-weight: bold; line-height: 13pt; letter-spacing: -0.05px; margin-bottom: 10px;">
+    Services performed to date
+</div>
+
+<!-- ═══ ITEMS TABLE ═══ -->
+<div style="margin-left: 42px; margin-right: 42px;">%ITEMS%</div>
+
+<!-- ═══ TOTALS ═══ -->
+<div style="margin-left: 42px; margin-right: 42px; margin-bottom: 20px;">
+    <table width="100%">
+        <tbody><tr>
+            <td width="50%"></td>
+            <td style="border-top: 1px solid black;">%TOTALSHTML%</td>
+        </tr>
+    </tbody></table>
+</div>
+
+<!--
+    [[SIMPLE|<br>
+    <div style="text-align:right">
+    %SIMPLETOTAL%<br>%TAXINC%
+    </div>]]-->
+
+<!-- ═══ PAYMENT / IBAN ═══ -->
+<div class="payment-section">
+    Please make the payment within 30 days on our account<br>
+    IBAN 123456789
+</div>
+
+<!-- ═══ SIGNATURE ═══ -->
+<div class="signature-line">
+    Idea Sonora
+</div>
+
+<!-- ═══ NOTES ═══ -->
+[[NOTES|
+<div class="extras">
+    <span style="font-weight: bold">{LANG_observations}</span><br>%NOTES%
+</div>
+]]
+
+<!-- ═══ CUSTOM FIELDS ═══ -->
+[[CUSTOMFIELDS|
+<div class="extras">
+    <span style="font-weight: bold">%CFK%</span><br>%CFV%
+</div>
+]]
+
+<!-- ═══ PAYMENT METHOD ═══ -->
+[[PM|
+<div class="extras">
+    <span style="font-weight: bold">{LANG_paymentterms}</span><br>%PM%
+</div>
+]]
+
+<!-- ═══ TERMS & CONDITIONS ═══ -->
+[[TAC|
+<pagebreak>
+    <div class="extras">
+        <span style="font-weight: bold">{LANG_tac}</span><br>%TAC%
+    </div>
+</pagebreak>
+]]
