@@ -89,6 +89,16 @@
         width: 45%;
         padding-left: 0px;
         padding-right: 0px;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Numeric columns: never wrap so values like "1.234,56€" stay on one line */
+    .items tr td:nth-child(2),
+    .items tr td:nth-child(3),
+    .items tr td:nth-child(4),
+    .items tr td:nth-child(5) {
+        white-space: nowrap;
     }
 
     /* Item group / title rows */
@@ -251,20 +261,19 @@
 
 <htmlpagefooter name="myfooter">
     <div style="
-      padding-top: 8px;
+      padding-top: 10px;
       padding-bottom: 8px;
       margin-left: 42px;
       margin-right: 42px;
+      border-top: 0.5pt solid #333333;
     ">
         <table width="100%" class="footertable">
             <tbody><tr>
-                <td width="16%"><b>%NAME%</b></td>
-                <td width="18%">%ADDRESS%</td>
-                <td width="18%">T +41 22 300 54 07<br>F +41 22 300 54 08</td>
-                <td width="20%">info@lacroixchessex.ch<br>www.lacroixchessex.ch</td>
-                <td width="14%">%IDNUM%</td>
-                <td width="14%" style="text-align: right;">
-                    {LANG_page}<br>{PAGENO}/{nb}
+                <td width="70%" style="text-align: left;">
+                    %DOCNUM% - %TOTAL%[[DUEDATE| &nbsp;&nbsp;{LANG_duedate} %DUEDATE%]]
+                </td>
+                <td width="30%" style="text-align: right;">
+                    {LANG_page} {PAGENO} de {nb}
                 </td>
             </tr>
         </tbody></table>
@@ -321,22 +330,8 @@
     ]]
 </div>
 
-<!-- BODY -->
-<div style="
-    margin-left: 42px;
-    margin-right: 42px;
-    font-size: 9pt;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 13pt;
-    letter-spacing: -0.05px;
-    margin-top: 2px;
-  ">
-    %BODY%
-</div>
-
 <div style="margin-left: 42px; margin-right: 42px; margin-top: 10px; font-size: 10pt; font-weight: bold; line-height: 13pt; letter-spacing: -0.05px; margin-bottom: 10px; border-top: .5pt solid #666666; border-bottom: .5pt solid #666666; padding-top: 10px; padding-bottom: 10px;">
-    Services performed to date
+    %BODY%
 </div>
 
 <div style="margin-left: 42px; margin-right: 42px;">%ITEMS%</div>
@@ -352,12 +347,9 @@
 </div>
 
 <div class="payment-section">
-    Please make the payment within 30 days on our account<br>
-    IBAN 123456789
-</div>
-
-<div class="signature-line">
-    Idea Sonora
+    <span style="font-weight: bold;">IDEA SONORA</span><br>
+    IBAN ES85 2100 3262 1722 0016 0222<br>
+    SWIFT/BIC: CAIXESBBXXX
 </div>
 
 [[NOTES|
@@ -372,16 +364,9 @@
 </div>
 ]]
 
-[[PM|
-<div class="extras">
-    <span style="font-weight: bold">{LANG_paymentterms}</span><br>%PM%
-</div>
-]]
-
 [[TAC|
-<pagebreak>
-    <div class="extras">
-        <span style="font-weight: bold">{LANG_tac}</span><br>%TAC%
-    </div>
-</pagebreak>
+<pagebreak />
+<div class="extras">
+    <span style="font-weight: bold">{LANG_tac}</span><br>%TAC%
+</div>
 ]]
